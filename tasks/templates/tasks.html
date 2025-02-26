@@ -7,5 +7,16 @@
 </head>
 <body>
     <h1>Tasks: </h1>
+    <form action="/" method="post">
+        {% csrf_token %}
+        {{TaskForm.title}}
+        <input type="submit" name="createtask" class="btn">
+        <!-- <button type="submit">Add Task</button> -->
+    </form>
+    {% for task in tasks %}
+        <p> {{task}}</p>
+
+
+    {% endfor %}
 </body>
-</html>
+</html> 
